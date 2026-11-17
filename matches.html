@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Real Madrid fixtures with filters and a practice ticket order form.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2304193d'/%3E%3Ctext x='50' y='67' font-size='54' text-anchor='middle' fill='%23eebd4e' font-family='Arial' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E">
+    <script>
+    // Apply the saved theme before the page is painted (no white flash)
+    try { document.documentElement.setAttribute('data-bs-theme', localStorage.getItem('rmTheme') === 'dark' ? 'dark' : 'light'); } catch (e) {}
+    </script>
+    <title>Matches &amp; Tickets - Real Madrid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark rm-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="index.html">
+                <span class="text-warning">Real</span> Madrid
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="matches.html">Matches &amp; Tickets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+                    <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="store.html" class="nav-link position-relative px-2 text-decoration-none" title="Shopping cart" aria-label="Shopping cart">
+                            🛒
+                            <span id="globalCartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem; display: none;">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="themeToggle" class="btn btn-outline-warning btn-sm" aria-label="Switch to dark mode" aria-pressed="false">
+                            <span id="themeIcon" aria-hidden="true">🌙</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+<main class="content-wrapper container my-5">
+        <h1 class="text-center mb-2 rm-title">Match Schedule</h1>
+        <p class="text-center text-muted mb-4">Upcoming fixtures, Madrid time (CET). Some times are still to be confirmed. Last updated Nov 7, 2026.</p>
+        <div class="text-center" id="matchFilters" role="group" aria-label="Filter matches"><button class="filter-btn active" data-f="">All</button><button class="filter-btn" data-f="Home">Home</button><button class="filter-btn" data-f="Away">Away</button><button class="filter-btn" data-f="Champions League">Champions League</button></div>
+        <div class="table-responsive shadow-sm rounded mb-5">
+            <table id="matchTable" class="table table-hover table-bordered align-middle text-center mb-0">
+                <caption class="visually-hidden">Upcoming Real Madrid fixtures</caption>
+                <thead class="rm-table-header text-white">
+                    <tr>
+                        <th scope="col">Date and time</th>
+                        <th scope="col">Tournament</th>
+                        <th scope="col">Opponent</th>
+                        <th scope="col">Stadium</th>
+                        <th scope="col">Home / Away</th>
+                        <th scope="col">Ticket price</th>
+                    </tr>
+                </thead>
+                <tbody><tr><td>Sat, Nov 21<br><small class="text-muted">21:00</small></td><td>La Liga</td><td><span class="club"><span class="club-logo"><span style="background:#8ac3ee;color:#04193d">CEL</span><img src="images/clubs/celta.png" alt="" loading="lazy" data-fallback></span>Celta Vigo</span></td><td>Santiago Bernabéu</td><td><span class="badge badge-home">Home</span></td><td data-match="celta"></td></tr><tr><td>Tue, Nov 24<br><small class="text-muted">21:00</small></td><td>Champions League</td><td><span class="club"><span class="club-logo"><span style="background:#e2001a;color:#fff">PSV</span><img src="images/clubs/psv.png" alt="" loading="lazy" data-fallback></span>PSV Eindhoven</span></td><td>Santiago Bernabéu</td><td><span class="badge badge-home">Home</span></td><td data-match="psv"></td></tr><tr><td>Sat, Nov 28<br><small class="text-muted">TBC</small></td><td>La Liga</td><td><span class="club"><span class="club-logo"><span style="background:#0761af;color:#fff">ALA</span><img src="images/clubs/alaves.png" alt="" loading="lazy" data-fallback></span>Alavés</span></td><td>Santiago Bernabéu</td><td><span class="badge badge-home">Home</span></td><td data-match="alaves"></td></tr><tr><td>Wed, Dec 2<br><small class="text-muted">TBC</small></td><td>La Liga</td><td><span class="club"><span class="club-logo"><span style="background:#0067b1;color:#fff">RSO</span><img src="images/clubs/real-sociedad.png" alt="" loading="lazy" data-fallback></span>Real Sociedad</span></td><td>Anoeta</td><td><span class="badge badge-away">Away</span></td><td class="text-muted" title="Away tickets are sold by the host club">—</td></tr><tr><td>Sun, Dec 6<br><small class="text-muted">TBC</small></td><td>La Liga</td><td><span class="club"><span class="club-logo"><span style="background:#ee2523;color:#fff">ATH</span><img src="images/clubs/athletic.png" alt="" loading="lazy" data-fallback></span>Athletic Club</span></td><td>San Mamés</td><td><span class="badge badge-away">Away</span></td><td class="text-muted" title="Away tickets are sold by the host club">—</td></tr><tr><td>Wed, Dec 9<br><small class="text-muted">21:00</small></td><td>Champions League</td><td><span class="club"><span class="club-logo"><span style="background:#ef0107;color:#fff">ARS</span><img src="images/clubs/arsenal.png" alt="" loading="lazy" data-fallback></span>Arsenal</span></td><td>Emirates Stadium</td><td><span class="badge badge-away">Away</span></td><td class="text-muted" title="Away tickets are sold by the host club">—</td></tr><tr><td>Sun, Dec 13<br><small class="text-muted">TBC</small></td><td>La Liga</td><td><span class="club"><span class="club-logo"><span style="background:#d91a21;color:#fff">OSA</span><img src="images/clubs/osasuna.png" alt="" loading="lazy" data-fallback></span>Osasuna</span></td><td>Santiago Bernabéu</td><td><span class="badge badge-home">Home</span></td><td data-match="osasuna"></td></tr></tbody>
+            </table>
+        </div>
+
+        <section class="bg-light py-5 rounded px-3">
+            <div class="container">
+                <h2 class="text-center mb-2 rm-title">Ticket Order</h2>
+                <p class="text-center text-muted small mb-4">Practice form for the course project. Real tickets are sold only on <a href="https://www.realmadrid.com">realmadrid.com</a>.</p>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        
+                        <div id="successMessage" class="alert alert-success fw-bold text-center" role="status" style="display: none;"></div>
+
+                        <form id="ticketForm" class="bg-white p-4 rounded shadow-sm" novalidate>
+                            <!-- Field 1: Match -->
+                            <div class="mb-3">
+                                <label class="form-label fw-bold" for="matchSelect">Select Match *</label>
+                                <select id="matchSelect" class="form-select">
+                                            <option value="" disabled selected hidden>-- Choose a home match --</option>
+                                            <option value="celta">Real Madrid vs Celta Vigo, Nov 21</option>
+                                            <option value="psv">Real Madrid vs PSV, Nov 24 (Champions League)</option>
+                                            <option value="alaves">Real Madrid vs Alavés, Nov 28</option>
+                                            <option value="osasuna">Real Madrid vs Osasuna, Dec 13</option>
+                                          </select>
+                                <div class="invalid-feedback">Please select a match.</div>
+                                <div id="matchInfo"></div>
+                            </div>
+                            
+                            <!-- Field 2: Tickets -->
+                            <div class="mb-3">
+                                <label class="form-label fw-bold" for="ticketCount">Number of Tickets *</label>
+                                <input type="number" id="ticketCount" class="form-control" placeholder="1-4" min="1" max="4" inputmode="numeric">
+                                <div class="invalid-feedback">You can order between 1 and 4 tickets.</div>
+                            </div>
+
+                            <!-- Field 3: Full Name -->
+                            <div class="mb-3">
+                                <label class="form-label fw-bold" for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" class="form-control" autocomplete="name" placeholder="John Doe">
+                                <div class="invalid-feedback">Name must be at least 3 characters long.</div>
+                            </div>
+                            
+                            <!-- Field 4: Email -->
+                            <div class="mb-3">
+                                <label class="form-label fw-bold" for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-control" autocomplete="email" placeholder="name@example.com">
+                                <div class="invalid-feedback">Please enter a valid email format.</div>
+                            </div>
+
+                            <!-- Field 5: Phone -->
+                            <div class="mb-3">
+                                <label class="form-label fw-bold" for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-control" autocomplete="tel" placeholder="+7 777 123 4567">
+                                <div class="invalid-feedback">Please enter a valid phone number (min 10 digits).</div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-warning w-100 fw-bold text-dark">Place Order</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5" aria-labelledby="ordersTitle">
+            <h2 id="ordersTitle" class="text-center mb-2 rm-title">My orders</h2>
+            <p class="text-center text-muted small mb-3">Practice orders are saved in this browser only.</p>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <ul id="ordersList" class="list-group shadow-sm mb-3"></ul>
+                    <button type="button" id="clearOrders" class="btn btn-outline-danger btn-sm w-100" style="display: none;">Clear all orders</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rm-navbar text-white text-center py-3 mt-auto">
+        <p class="mb-1">© 2026 Real Madrid fan project, IT 2510. Unofficial; not affiliated with Real Madrid CF.</p>
+        <p class="src mb-0">Sources: <a href="https://www.realmadrid.com">realmadrid.com fixtures</a> · <a href="https://www.laliga.com">LALIGA</a></p>
+        <p class="src mb-0">Credits: Bootstrap 5.3, jQuery 3.7, Google Fonts (Bebas Neue, Manrope). Club crest: Wikipedia. Photos and club logos belong to their owners. Code written with AI assistance (Claude, Anthropic).</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/matches.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>

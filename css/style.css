@@ -1,0 +1,245 @@
+/* Club colors and theme variables */
+:root {
+    --rm-blue: #04193d;
+    --rm-gold: #eebd4e;
+    --rm-white: #ffffff;
+
+    /* Light theme */
+    --bg-color: #f4f5f8;
+    --text-color: #1b2333;
+    --card-bg: #ffffff;
+    --card-border: #e3e6ee;
+    --title: #04193d;
+}
+
+/* Dark theme (set on <html> together with Bootstrap's data-bs-theme) */
+:root[data-bs-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e4eaf5;
+    --card-bg: #1e1e1e;
+    --card-border: #333333;
+    --title: #eebd4e;
+}
+
+/* Apply the variables to the main elements */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cards, sections and forms follow the theme too */
+.card, .fact-box, .era-section, #ticketForm, .bg-light, .bg-white {
+    background-color: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    color: var(--text-color) !important;
+}
+
+main, .content-wrapper {
+    flex: 1;
+}
+
+/* Bootstrap components in club colors */
+.rm-navbar {
+    background-color: var(--rm-blue);
+}
+
+.rm-title {
+    color: var(--title);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.btn-warning {
+    background-color: var(--rm-gold);
+    border: none;
+}
+.btn-warning:hover {
+    background-color: #d1a33a;
+}
+
+/* First team section */
+.custom-squad-section {
+    padding: 60px 20px;
+    background-color: var(--bg-color);
+}
+.custom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.custom-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--title);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.custom-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.player-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    isolation: isolate; 
+}
+.player-info {
+    padding: 20px;
+    text-align: center;
+}
+.player-name {
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+    color: var(--title);
+}
+.player-role {
+    color: var(--bs-secondary-color);
+    margin: 0;
+    font-size: 0.9rem;
+}
+.player-stats {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    background-color: rgba(4, 25, 61, 0.9);
+    color: var(--rm-gold);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.player-card:hover .player-stats {
+    opacity: 1;
+}
+.player-photo {
+    position: relative;
+    height: 250px;
+    background-color: #212529;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px;
+}
+.player-photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom center; 
+}
+@media (min-width: 768px) {
+    .custom-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .player-name { font-size: 1.5rem; }
+}
+@media (min-width: 1280px) {
+    .custom-grid { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .custom-heading { font-size: 2.5rem; margin-bottom: 50px; }
+}
+
+.rm-table-header {
+    background-color: var(--rm-blue);
+    border-color: var(--title);
+}
+.form-label.fw-bold {
+    color: var(--title);
+}
+
+/* JQuery Effects / Hover states */
+.store-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.store-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+}
+
+/* Image bounding box fixes for History page */
+.era-img-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.era-img-wrapper img.era-photo {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover; 
+    object-position: top center; /* Focuses on faces if cropped */
+    display: block;
+    background-color: transparent !important;
+}
+
+/* NEW FACT CARD (Replaces fact-box) */
+.fact-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 4px solid var(--gold);
+    background-color: var(--ink); /* Fallback if no image */
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.fact-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    background-color: var(--ink);
+}
+
+.fact-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(4, 25, 61, 0.95) 15%, rgba(4, 25, 61, 0.4) 60%, transparent 100%);
+    z-index: 1;
+}
+
+.fact-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
