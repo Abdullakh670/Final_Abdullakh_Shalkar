@@ -25,8 +25,8 @@ linear-gradient(180deg,#04193d,#020d22)}
 .countdown div{min-width:78px;text-align:center;padding:.6rem .4rem;border:1px solid var(--line);border-radius:6px;background:rgba(255,255,255,.05)}
 .countdown b{display:block;font:400 2.4rem/1 'Bebas Neue',sans-serif;color:var(--gold)}
 .countdown small{color:#9fb0d0;font-size:.75rem}
-.next-label{color:#9fb0d0;font-size:.9rem;margin:0}
-.last-match{display:inline-block;border-left:4px solid var(--gold);padding:.4rem 1rem;background:rgba(255,255,255,.07);margin-bottom:1.5rem}
+.next-label {color: #e4eaf5;font-size: 1rem;margin: 0;font-weight: 600;text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 10px rgba(4, 25, 61, 0.8);}
+.last-match {display: inline-block;border-left: 4px solid var(--gold);padding: .5rem 1.2rem;background: rgba(4, 25, 61, 0.8);backdrop-filter: blur(4px);margin-bottom: 1.5rem;border-radius: 0 8px 8px 0;box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);}
 .btn-warning{color:#04193d!important;font-weight:700;border-radius:4px;padding-inline:1.6rem}
 .btn-warning:hover{background:#fff!important}
 
