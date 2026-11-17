@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The history of Real Madrid: eras of the club and the trophy room.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2304193d'/%3E%3Ctext x='50' y='67' font-size='54' text-anchor='middle' fill='%23eebd4e' font-family='Arial' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E">
+    <script>
+    // Apply the saved theme before the page is painted (no white flash)
+    try { document.documentElement.setAttribute('data-bs-theme', localStorage.getItem('rmTheme') === 'dark' ? 'dark' : 'light'); } catch (e) {}
+    </script>
+    <title>Club History - Real Madrid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark rm-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="index.html">
+                <span class="text-warning">Real</span> Madrid
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="matches.html">Matches &amp; Tickets</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="history.html">History</a></li>
+                    <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="store.html" class="nav-link position-relative px-2 text-decoration-none" title="Shopping cart" aria-label="Shopping cart">
+                            🛒
+                            <span id="globalCartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem; display: none;">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="themeToggle" class="btn btn-outline-warning btn-sm" aria-label="Switch to dark mode" aria-pressed="false">
+                            <span id="themeIcon" aria-hidden="true">🌙</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <main class="container my-5 content-wrapper">
+        <h1 class="text-center mb-5 rm-title">Royal club: a history of greatness</h1>
+        <section class="row mb-5">
+            <article class="col-md-8">
+                <p class="text-muted mb-4"><small>Click an era to open or close it.</small></p>
+                <div class="era-section mb-3 border rounded p-3 shadow-sm"><h2 class="h3 mb-0"><button type="button" class="era-toggle d-flex justify-content-between align-items-center w-100" aria-expanded="false">Foundation and early years (1902–1920) <span aria-hidden="true">▼</span></button></h2><div class="era-content mt-3" style="display: none;"><div class="era-img-wrapper"><img class="era-photo" src="images/history/foundation.jpg" alt="Madrid Football Club in its early years" loading="lazy" data-fallback></div><p>Madrid Football Club was founded on March 6, 1902. Brothers Juan and Carlos Padrós were among the founders, and Julián Palacios became the first president. The club won its first Copa del Rey in 1905, beating Athletic Bilbao. In 1920 King Alfonso XIII granted the title “Real”, and the crown joined the badge.</p></div></div>
+<div class="era-section mb-3 border rounded p-3 shadow-sm"><h2 class="h3 mb-0"><button type="button" class="era-toggle d-flex justify-content-between align-items-center w-100" aria-expanded="false">Bernabéu and Di Stéfano (1943–1960s) <span aria-hidden="true">▼</span></button></h2><div class="era-content mt-3" style="display: none;"><div class="era-img-wrapper"><img class="era-photo" src="images/history/di-stefano.jpg" alt="Real Madrid in the Di Stéfano era" loading="lazy" data-fallback></div><p>Santiago Bernabéu became president in 1943, and the stadium that carries his name opened in 1947. With Alfredo Di Stéfano, Ferenc Puskás and Paco Gento, Madrid won the first five European Cups (1956–1960). A sixth followed in 1966.</p></div></div>
+<div class="era-section mb-3 border rounded p-3 shadow-sm"><h2 class="h3 mb-0"><button type="button" class="era-toggle d-flex justify-content-between align-items-center w-100" aria-expanded="false">Galácticos and the Séptima (1998–2006) <span aria-hidden="true">▼</span></button></h2><div class="era-content mt-3" style="display: none;"><div class="era-img-wrapper"><img class="era-photo" src="images/history/galacticos.jpg" alt="Real Madrid in the Galácticos era" loading="lazy" data-fallback></div><p>Madrid won the seventh European Cup in 1998, then the 2000 and 2002 finals. Florentino Pérez, president since 2000, signed Figo, Zidane, Ronaldo and Beckham in successive summers. Zidane’s volley at Hampden Park in 2002 won the ninth European Cup.</p></div></div>
+<div class="era-section mb-3 border rounded p-3 shadow-sm"><h2 class="h3 mb-0"><button type="button" class="era-toggle d-flex justify-content-between align-items-center w-100" aria-expanded="false">Four in five years (2014–2018) <span aria-hidden="true">▼</span></button></h2><div class="era-content mt-3" style="display: none;"><div class="era-img-wrapper"><img class="era-photo" src="images/history/decima.jpg" alt="Real Madrid Champions League celebration" loading="lazy" data-fallback></div><p>La Décima came in Lisbon in 2014. Then Madrid won three Champions Leagues in a row, in 2016, 2017 and 2018, the first club to do so in the competition’s modern format.</p></div></div>
+<div class="era-section mb-3 border rounded p-3 shadow-sm"><h2 class="h3 mb-0"><button type="button" class="era-toggle d-flex justify-content-between align-items-center w-100" aria-expanded="false">Latest chapter (2022 to today) <span aria-hidden="true">▼</span></button></h2><div class="era-content mt-3" style="display: none;"><div class="era-img-wrapper"><img class="era-photo" src="images/history/latest.jpg" alt="Real Madrid today" loading="lazy" data-fallback></div><p>Paris 2022 brought the 14th European Cup and Wembley 2024 the 15th, against Borussia Dortmund. In 2026/27 José Mourinho is back on the bench, and the Bernabéu has been rebuilt with a retractable roof.</p></div></div>
+            </article>
+            
+            <aside class="col-md-4 mt-4 mt-md-0">
+                <div class="fact-box shadow-sm mb-4 rounded-3 p-4 bg-white" style="border-left: 4px solid var(--gold) !important;">
+                    <h2 class="h5 rm-title fw-bold mb-2" style="font-size: 1.3rem; padding-bottom: 0;">CLUB OF THE CENTURY</h2>
+                    <p class="small text-muted mb-0">FIFA named Real Madrid the best club of the 20th century on December 11, 2000.</p>
+                </div>
+                
+                <div class="fact-card shadow-sm mb-4 rounded-3">
+                    <img src="images/bernabeu.jpg" class="fact-card-bg" alt="Santiago Bernabéu" onerror="this.style.opacity='0'">
+                    <div class="fact-card-overlay"></div>
+                    <div class="fact-card-content p-4">
+                        <h2 class="h5 text-warning fw-bold mb-2 rm-title" style="font-size: 1.5rem; padding-bottom: 0;">SANTIAGO BERNABÉU</h2>
+                        <p class="small text-white mb-0" style="position: relative; z-index: 3;">Home since 1947, capacity about 80,000, on Avenida Concha Espina in Madrid.</p>
+                    </div>
+                </div>
+            </aside>
+        </section>
+        
+        <section class="mt-5 mb-5 pb-5">
+            <h2 class="text-center mb-4 rm-title">Trophy room</h2>
+            <div id="trophyCarousel" class="carousel slide shadow-lg rounded" data-bs-ride="carousel">
+                <div class="carousel-inner text-center rounded" id="carousel-content">
+                    <!-- Trophies rendered by history.js -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#trophyCarousel" data-bs-slide="prev" aria-label="Previous"><span class="carousel-control-prev-icon"></span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#trophyCarousel" data-bs-slide="next" aria-label="Next"><span class="carousel-control-next-icon"></span></button>
+            </div>
+        </section>
+    </main>
+
+    <button id="backToTop" class="btn btn-warning rounded-circle shadow p-3 fw-bold" aria-label="Back to top">↑</button>
+
+    <footer class="rm-navbar text-white text-center py-3 mt-auto">
+        <p class="mb-1">© 2026 Real Madrid fan project, IT 2510. Unofficial; not affiliated with Real Madrid CF.</p>
+        <p class="src mb-0">Sources: <a href="https://www.realmadrid.com">realmadrid.com fixtures</a> · <a href="https://www.laliga.com">LALIGA</a></p>
+        <p class="src mb-0">Credits: Bootstrap 5.3, jQuery 3.7, Google Fonts (Bebas Neue, Manrope). Club crest: Wikipedia. Photos and club logos belong to their owners. Code written with AI assistance (Claude, Anthropic).</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/history.js"></script>
+</body>
+</html>
